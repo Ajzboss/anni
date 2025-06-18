@@ -1,9 +1,76 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My GitHub Website</title>
-</head>
-<body>
-  <h1>Hello, world!</h1>
-</body>
-</html>
+<!-- File: src/App.svelte -->
+<script>
+  import { onMount } from 'svelte';
+  let playing = false;
+  let audio;
+
+  onMount(() => {
+    audio = new Audio('/music/song.mp3');
+  });
+
+  function toggleMusic() {
+    if (playing) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+    playing = !playing;
+  }
+</script>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #ffe0e9, #fff5f8);
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  .container {
+    text-align: center;
+    padding: 3rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    animation: fadeIn 2s ease;
+  }
+
+  img {
+    width: 300px;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+  }
+
+  button {
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: #ff69b4;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<div class="container">
+  <h1>Happy Anniversary ❤️</h1>
+  <p>Here's to our journey so far.</p>
+  <img src="/images/bear.jpg" alt="Us together" />
+  <img src="/images/train.jpg" alt="Cute moment" style="margin-left: 1rem;" />
+  <br />
+  <button on:click={toggleMusic}>{playing ? 'Pause Music' : 'Play Music'}</button>
+</div>
