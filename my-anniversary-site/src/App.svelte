@@ -60,33 +60,41 @@
 
 
   //  Card Section
-  let showCard = false;
+  let showAnniversaryCard = false;
+  let revealedLines = [];
 
-  let anniversaryLines = [
-    "One year, countless smiles, and endless memories.",
-    "Thank you for being my safe place, my joy, my everything.",
-    "Every moment with you is a page I never want to stop writing.",
-    "Here’s to forever — with you."
+  const anniversaryLines = [
+    "I love your smile.",
+    "I love your wisdom.",
+    "I love your patience.",
+    "I love your humor.",
+    "I love your warmth for me.",
+    "Fuck I love your body.",
+    
   ];
 
-  // when the section scrolls into view
-  function handleScrollReveal(entry) {
-    if (entry.isIntersecting) {
-      showCard = true;
-    }
-  }
   function observe(node) {
     const observer = new IntersectionObserver(([entry]) => {
-      handleScrollReveal(entry);
-    }, {
-      threshold: 0.5
-    });
+      if (entry.isIntersecting && !showAnniversaryCard) {
+        showAnniversaryCard = true;
+        revealAnniversary();
+      }
+    }, { threshold: 0.5 });
+
     observer.observe(node);
     return {
       destroy() {
         observer.disconnect();
       }
     };
+  }
+
+  function revealAnniversary() {
+    anniversaryLines.forEach((line, i) => {
+      setTimeout(() => {
+        revealedLines = [...revealedLines, line];
+      }, i * 1200);
+    });
   }
 </script>
 
@@ -117,15 +125,16 @@
 </div>
 
 <div class="container">
-  <div use:observe class="anniversary-wrapper">
-  {#if showCard}
+  <section use:observe class="anniversary-wrapper">
+  {#if showAnniversaryCard}
     <div class="anniversary-card">
-      {#each anniversaryLines as line, i}
-        <p class="anniversary-line" transition:fade={{ delay: i * 1000 }}>
+      <h3>In case you didn't know, I think about you a lot. I never could have imagined the whirlwind of happiness you gifted me one year ago on that date. So much to love. In fact:</h3>
+      {#each revealedLines as line}
+        <p class="anniversary-line" transition:fly={{ y: 20, duration: 500 }}>
           {line}
         </p>
       {/each}
     </div>
   {/if}
-  </div>
+</section>
 </div>

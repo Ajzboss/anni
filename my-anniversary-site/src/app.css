@@ -28,6 +28,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: 'Dancing Script', cursive;
+
 }
 
 h1 {
@@ -216,12 +218,13 @@ button {
 }
 
 .anniversary-card {
-  font-family: 'Georgia', serif;
+  font-family: 'Great Vibes', cursive;
   font-size: 1.2rem;
   color: #444;
   line-height: 1.6;
 }
 
 .anniversary-line {
+  font-family: 'Dancing Script', cursive;
   margin: 1rem 0;
 }
