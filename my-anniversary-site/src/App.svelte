@@ -7,7 +7,7 @@
   let audio;
 
   onMount(() => {
-    audio = new Audio('/music/song.mp3');
+    audio = new Audio('/music/Like.mp3');
   });
 
   function toggleMusic() {
