@@ -57,7 +57,7 @@
   {
     src: import.meta.env.BASE_URL+ '/images/thrift.jpg',
     alt: 'Memory 5',
-    note: 'We went thrift shopping and while largely we kinda biffed it, we did find this cute little shirt. Shouldda bought it.',
+    note: 'We went thrift shopping and while largely we kinda biffed it, we did find this cute little shirt. Shoulda bought it.',
     location: 'Seattle, 2024'
   },
   {
@@ -95,6 +95,12 @@
     alt: 'Memory 11',
     note: 'IM Sorry you look so fucking good in this photo I want to pick you up and- anyways, I love you.',
     location: 'Japan, 2024'
+  },
+  {
+    src: import.meta.env.BASE_URL+ '/images/jtree.jpg',
+    alt: 'Memory 12',
+    note: 'The view from the mountain was so nice. We never did climb on that rock though.',
+    location: 'Los Angeles, 2024'
   }
   ];
 
@@ -191,12 +197,12 @@
     {
       date: '2024-09-20',
       title: 'Japan',
-      description: 'The best trip of my life. I loved every second of it with you. How batshit crazy are we. How cute was you taking care of me sick as hell in the middle of a foreign country. How insanse was taking photos together at teamlabs?',
+      description: 'The best trip of my life. I loved every second of it with you. How batshit crazy are we. How insanse was taking photos together at teamlabs? How goated were you when you took care of sick old me? How yummy was the sushi? ',
     },
     {
       date: '2024-11-13',
       title: 'I Made You Play League',
-      description: 'The Origin Of The Our League Addiction. I still remember you saying "I\'m not going to play this game" and then playing it for 6 hours straight. And The origin of the fabled lan party.',
+      description: 'The Origin Of The Our League Addiction. I should not be happy, but i am glad I got you playing it for 6 hours straight. It was the origin of the fabled lan party.',
     },
     {
       date: '2024-11-17',

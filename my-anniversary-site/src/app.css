@@ -29,8 +29,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: 'Dancing Script', cursive;
-  animation: heartbeat-bg 2s infinite;
-  background: radial-gradient(circle, #fff0f5 0%, #ffe0eb 100%);
+  animation: heartbeat-bg 4s ease-in-out infinite;
+  background: linear-gradient(135deg, #ffe0e9, #fff5f8);
+  transition: background 0.3s ease;
 
 }
 
@@ -404,9 +405,10 @@ button {
 }
 @keyframes heartbeat-bg {
   0%, 100% {
-    background-size: 100%;
+    background: linear-gradient(135deg, #ffe0e9, #fff5f8);
   }
   50% {
-    background-size: 103%;
+    background: linear-gradient(135deg, #ffd3e0, #ffeef4);
   }
 }
+
